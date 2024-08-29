@@ -138,3 +138,5 @@ const total = (a: number, ...nums: number[]): number => {
 };
 
 logMsg(total(1, 2, 3, 4, 5, 6));
+
+// type assertion - type casting
