@@ -1,8 +1,10 @@
-
+import PageHeader from "./Layouts/PageHeader"
 
 const App = () => {
   return (
-    <div>App</div>
+    <div className='max-h-screen flex flex-col'>
+      <PageHeader></PageHeader>
+    </div>
   )
 }
 
