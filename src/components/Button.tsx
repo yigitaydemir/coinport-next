@@ -21,7 +21,7 @@ const buttonStyles = cva(["hover:bg-secondary-hover", "transition-colors"], {
   },
 });
 
-type ButtonProps = VariantProps<typeof buttonStyles>
+type ButtonProps = VariantProps<typeof buttonStyles> & ComponentProps<"button"
 
 const Button = ({ variant, size }: ButtonProps) => {
   return <button className={buttonStyles({ variant, size })}></button>;
