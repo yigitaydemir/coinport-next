@@ -46,11 +46,11 @@ app.post("/books", (req, res) => {
   });
 });
 
-app.put("books/:id", (req, res) => {
+app.put("/books/:id", (req, res) => {
   const bookId = req.params.id;
 
   const q =
-    "UPDATE books SET `title` = ?, `descrition` = ?, `price` = ?, `cover` = ? WHERE id = ?";
+    "UPDATE `test`.`books` SET `title` = ?, `description` = ?, `cover` = ?, `price` = ? WHERE (`id` = ?)";
 
   const values = [
     req.body.title,

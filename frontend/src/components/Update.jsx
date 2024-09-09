@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const Update = () => {
@@ -9,6 +9,7 @@ const Update = () => {
     price: null,
     cover: "",
   });
+  const { id } = useParams()
 
   const navigate = useNavigate();
 
@@ -20,7 +21,7 @@ const Update = () => {
     e.preventDefault();
 
     try {
-      await axios.put("http://localhost:8800/books", book);
+      await axios.put(`http://localhost:8800/books/${id}`, book); 
       navigate("/");
     } catch (error) {
       console.log(error);

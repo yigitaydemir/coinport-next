@@ -10,7 +10,6 @@ const Books = () => {
       try {
         const res = await axios.get("http://localhost:8800/books");
         setBooks(res.data);
-        console.log(res);
       } catch (error) {
         console.log(err);
       }
