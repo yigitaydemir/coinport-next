@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 const Navbar = () => {
   return (
     <div className="bg-red-500">
@@ -10,7 +12,9 @@ const Navbar = () => {
           <li>Watchlist</li>
         </ul>
 
-        <p className="flex-1 flex justify-end">username</p>
+        <div className="flex-1 flex justify-end">
+          <Button>User</Button>
+        </div>
       </div>
     </div>
   );
