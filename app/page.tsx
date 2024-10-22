@@ -28,17 +28,31 @@ export default function Home() {
   const options = {
     headers: {
       "Content-Type": "application/json",
-      "x-access-token":
-        "coinrankingffd88d7f1f3ded6efdd4294f69bc4947eaeea7a7afd17f66",
+      "x-access-token": process.env.NEXT_PUBLIC_COINRANKING_API_KEY,
     },
   };
 
   useEffect(() => {
+    // const getCoins = () => {
+    //   fetch("https://api.coinranking.com/v2/coins", options)
+    //     .then((response) => response.json())
+    //     .then((result) => {
+    //       setCoins(result.data.coins);
+    //     });
+    // };
+
     const getCoins = () => {
       fetch("https://api.coinranking.com/v2/coins", options)
         .then((response) => response.json())
         .then((result) => {
-          setCoins(result.data.coins);
+          if (result?.data?.coins) {
+            setCoins(result.data.coins);
+          } else {
+            console.error("Unexpected response format:", result);
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching coins:", error);
         });
     };
 
