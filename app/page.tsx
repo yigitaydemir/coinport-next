@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+// delete this later
+
 type coin = {
   "24hVolume": string;
   btcPrice: string;
